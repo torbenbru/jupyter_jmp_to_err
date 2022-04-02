@@ -15,22 +15,19 @@ const plugin: JupyterFrontEndPlugin<void> = {
   autoStart: true,
   activate: (app: JupyterFrontEnd) => {
 
-    NotebookActions.selectionExecuted.connect(async (_: any, args: { lastCell: any; notebook: any; }) => {
-      const { lastCell } = args;
-
-      console.log(lastCell);
-
-      const codeCellModel = lastCell.model as ICodeCellModel;
+    NotebookActions.executed.connect((_, context) => {
+      let {cell} = context; 
+      const codeCellModel = cell.model as ICodeCellModel;
 
       for(let i = 0; i < codeCellModel.outputs.length; i++) {
         const outputObject = codeCellModel.outputs.get(i).toJSON();
 
         if(outputObject && outputObject.output_type == 'error') {
 
-          var element = lastCell.promptNode;
+          var element = cell.promptNode;
 
           if(element !== null) {
-            element.scrollIntoViewIfNeeded();
+            element.scrollIntoView();
           }
         }
       }
