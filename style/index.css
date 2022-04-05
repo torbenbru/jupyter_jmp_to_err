@@ -1,2 +1,6 @@
 
 @import url('base.css');
+
+.jp-ScrollToErrorToolbarIcon {
+    color: var(--jp-inverse-layout-color3);
+}
