@@ -2,6 +2,8 @@
 
 [![Github Actions Status](https://github.com/github_username/jupyter_jmp_to_err/workflows/Build/badge.svg)](https://github.com/github_username/jupyter_jmp_to_err/actions/workflows/build.yml)[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/github_username/jupyter_jmp_to_err/main?urlpath=lab)
 
+![plugin in use](docs/example.gif)
+
 Jump to the failed cell in a notebook with the click of a button.
 
 
